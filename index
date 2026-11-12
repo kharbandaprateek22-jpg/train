@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Last Train | A Midnight Encounter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="stars"></div>
+
+  <header>
+    <div class="logo">THE LAST TRAIN</div>
+    <button id="soundBtn">♫ Sound: Off</button>
+  </header>
+
+  <main id="movie">
+
+    <!-- SCENE 1 -->
+    <section class="scene active" id="scene1">
+      <div class="background station">
+        <div class="moon"></div>
+        <div class="station-building"></div>
+        <div class="platform"></div>
+        <div class="train">
+          <div class="train-window"></div>
+          <div class="train-window"></div>
+          <div class="train-window"></div>
+          <div class="train-door"></div>
+        </div>
+        <div class="character man">🚶🏻‍♂️</div>
+      </div>
+
+      <div class="story">
+        <span class="chapter">CHAPTER 01</span>
+        <h1>The Last Train</h1>
+        <p>Some journeys begin without a destination.</p>
+        <button class="next" data-next="2">Board the train →</button>
+      </div>
+    </section>
+
+    <!-- SCENE 2 -->
+    <section class="scene" id="scene2">
+      <div class="background corridor">
+        <div class="corridor-lights"></div>
+        <div class="corridor-window"></div>
+        <div class="moving-stars"></div>
+        <div class="character walking">🚶🏻‍♂️</div>
+      </div>
+
+      <div class="story">
+        <span class="chapter">CHAPTER 02</span>
+        <h1>Between Coaches</h1>
+        <p>The world outside was asleep. The train kept moving.</p>
+        <button class="next" data-next="3">Enter the next coach →</button>
+      </div>
+    </section>
+
+    <!-- SCENE 3 -->
+    <section class="scene" id="scene3">
+      <div class="background compartment">
+        <div class="window moon-window">
+          <div class="moon"></div>
+          <div class="night-sky"></div>
+        </div>
+
+        <div class="lamp"></div>
+
+        <div class="couple">
+          <div class="character man-seat">👨🏻</div>
+          <div class="character girl">👩🏻</div>
+        </div>
+
+        <div class="seat"></div>
+      </div>
+
+      <div class="story">
+        <span class="chapter">CHAPTER 03</span>
+        <h1>A Stranger at Midnight</h1>
+        <p>The girl sitting beside the window smiled at him.</p>
+        <button class="next" data-next="4">Talk to her →</button>
+      </div>
+    </section>
+
+    <!-- SCENE 4 -->
+    <section class="scene" id="scene4">
+      <div class="background compartment">
+        <div class="window moon-window">
+          <div class="moon"></div>
+          <div class="night-sky"></div>
+        </div>
+        <div class="lamp"></div>
+        <div class="couple">
+          <div class="character man-seat">👨🏻</div>
+          <div class="character girl">👩🏻</div>
+        </div>
+      </div>
+
+      <div class="story dialogue">
+        <span class="chapter">01:47 AM</span>
+        <h1>A Conversation</h1>
+
+        <div class="chat">
+          <p><b>Girl:</b> "Do you believe people meet for a reason?"</p>
+          <p><b>Man:</b> "Maybe some journeys are meant to be shared."</p>
+          <p><b>Girl:</b> "Then promise me something."</p>
+          <p><b>Man:</b> "Anything."</p>
+          <p><b>Girl:</b> "Remember this night. Even when the sun rises."</p>
+        </div>
+
+        <button class="next" data-next="5">Wait for sunrise →</button>
+      </div>
+    </section>
+
+    <!-- SCENE 5 -->
+    <section class="scene" id="scene5">
+      <div class="background sunrise">
+        <div class="sun"></div>
+        <div class="train-window"></div>
+        <div class="empty-seat"></div>
+        <div class="character man-seat">👨🏻</div>
+      </div>
+
+      <div class="story ending">
+        <span class="chapter">CHAPTER 04</span>
+        <h1>She Was Gone.</h1>
+        <p>The first light of morning touched the window.</p>
+        <p>Her seat was empty.</p>
+        <p>Only the warmth of her memory remained.</p>
+
+        <h2>Some people are only meant to be a beautiful memory.</h2>
+
+        <button id="restart">↻ Experience the journey again</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <button id="previous">← Previous</button>
+    <span id="progress">01 / 05</span>
+    <button id="continue">Continue →</button>
+  </footer>
+
+  <audio id="trainSound" loop>
+    <source src="https://actions.google.com/sounds/v1/transportation/train_approaching.ogg" type="audio/ogg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
