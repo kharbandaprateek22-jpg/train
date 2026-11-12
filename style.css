@@ -1,0 +1,446 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #070b19;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+header {
+  height: 65px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  background: rgba(0,0,0,.25);
+}
+
+.logo {
+  font-size: 13px;
+  letter-spacing: 4px;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  color: white;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.3);
+  padding: 12px 22px;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+button:hover {
+  background: #c48b89;
+  transform: translateY(-2px);
+}
+
+#soundBtn {
+  padding: 8px 15px;
+  font-size: 11px;
+}
+
+#movie {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.3s ease;
+}
+
+.scene.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(#080f2c, #222b47 70%, #101522);
+}
+
+.story {
+  position: absolute;
+  z-index: 5;
+  left: 9%;
+  bottom: 16%;
+  max-width: 550px;
+  text-shadow: 0 2px 15px #000;
+}
+
+.chapter {
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: #e6b6b1;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 7vw, 76px);
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+.story p {
+  font-size: 14px;
+  line-height: 2;
+  color: #dedce6;
+  margin-bottom: 18px;
+}
+
+.moon {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: #f8e8c9;
+  box-shadow: 0 0 50px #f8e8c9, 0 0 130px #8ca5df;
+  position: absolute;
+  top: 13%;
+  right: 18%;
+}
+
+.station-building {
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  bottom: 35%;
+  background: #12192b;
+  border-top: 3px solid #53617b;
+}
+
+.platform {
+  position: absolute;
+  bottom: 0;
+  height: 35%;
+  width: 100%;
+  background: linear-gradient(#252d3c, #080c16);
+}
+
+.train {
+  position: absolute;
+  height: 185px;
+  width: 75%;
+  bottom: 25%;
+  left: 12%;
+  border-radius: 30px 30px 4px 4px;
+  background: linear-gradient(160deg,#66738b,#242d42 50%,#101725);
+  border: 3px solid #8793a9;
+  animation: train-arrive 4s ease-out;
+}
+
+.train-window {
+  display: inline-block;
+  width: 16%;
+  height: 75px;
+  margin: 30px 2%;
+  background: #f4d8a3;
+  box-shadow: 0 0 25px #f4d8a3;
+  border: 5px solid #151c30;
+}
+
+.train-door {
+  position: absolute;
+  height: 130px;
+  width: 65px;
+  right: 8%;
+  bottom: 0;
+  background: #151c30;
+}
+
+@keyframes train-arrive {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.character {
+  position: absolute;
+  font-size: 75px;
+  z-index: 4;
+  filter: drop-shadow(0 0 12px rgba(0,0,0,.7));
+}
+
+.man {
+  bottom: 18%;
+  left: 42%;
+  animation: walking 2s infinite alternate;
+}
+
+@keyframes walking {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+
+/* Coach corridor */
+
+.corridor {
+  background: linear-gradient(90deg,#101525,#4b3941,#131827);
+}
+
+.corridor-lights {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  height: 15px;
+  background: repeating-linear-gradient(90deg,#e5b77a 0 65px,transparent 65px 180px);
+  box-shadow: 0 0 35px #f0bb82;
+  animation: move-lights 3s linear infinite;
+}
+
+.corridor-window {
+  position: absolute;
+  top: 27%;
+  right: 12%;
+  width: 35%;
+  height: 38%;
+  border: 12px solid #272b3b;
+  background: linear-gradient(#111c39,#344c74);
+}
+
+@keyframes move-lights {
+  from { transform: translateX(0); }
+  to { transform: translateX(-180px); }
+}
+
+.walking {
+  bottom: 12%;
+  left: 48%;
+  animation: walking 1s infinite alternate;
+}
+
+/* Compartment */
+
+.compartment {
+  background: linear-gradient(90deg,#1b1521,#46343a,#161c30);
+}
+
+.window {
+  position: absolute;
+  width: 38%;
+  height: 45%;
+  top: 12%;
+  left: 31%;
+  border: 12px solid #493a37;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(#111c3d,#344b6c);
+}
+
+.night-sky {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 70%,#16243b);
+  animation: scenery 5s linear infinite;
+}
+
+@keyframes scenery {
+  from { transform: translateX(0); }
+  to { transform: translateX(-40px); }
+}
+
+.lamp {
+  position: absolute;
+  top: 8%;
+  left: 49%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #ffe2a0;
+  box-shadow: 0 0 50px 30px rgba(255,193,117,.2);
+}
+
+.couple {
+  position: absolute;
+  bottom: 15%;
+  left: 25%;
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.man-seat, .girl {
+  position: relative;
+  font-size: clamp(65px, 9vw, 110px);
+  animation: breathe 3s infinite ease-in-out;
+}
+
+.girl {
+  filter: drop-shadow(0 0 18px rgba(232,169,179,.3));
+}
+
+@keyframes breathe {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.seat {
+  position: absolute;
+  bottom: 0;
+  height: 17%;
+  width: 100%;
+  background: linear-gradient(#784e50,#33232f);
+}
+
+/* Dialogue */
+
+.dialogue {
+  left: auto;
+  right: 7%;
+  bottom: 12%;
+  max-width: 480px;
+}
+
+.chat {
+  margin: 20px 0;
+  background: rgba(8,12,27,.75);
+  padding: 15px 20px;
+  border-left: 2px solid #d49c9c;
+  border-radius: 5px;
+}
+
+.chat p {
+  margin: 7px 0;
+  font-size: 13px;
+}
+
+/* Sunrise */
+
+.sunrise {
+  background: linear-gradient(#758db4,#f1ad91,#f9d5a6,#584d60);
+}
+
+.sun {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #ffe0a0;
+  box-shadow: 0 0 90px #ffce8d;
+  animation: rise 8s ease-in forwards;
+}
+
+@keyframes rise {
+  from { top: 38%; opacity: .5; }
+  to { top: 18%; opacity: 1; }
+}
+
+.empty-seat {
+  position: absolute;
+  bottom: 15%;
+  left: 35%;
+  width: 30%;
+  height: 110px;
+  background: #76535c;
+  border-radius: 30px 30px 5px 5px;
+}
+
+.sunrise .man-seat {
+  position: absolute;
+  bottom: 18%;
+  left: 15%;
+}
+
+.ending {
+  left: 55%;
+  top: 18%;
+  bottom: auto;
+  max-width: 40%;
+}
+
+.ending h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #fff2d8;
+  margin: 25px 0;
+}
+
+/* Footer */
+
+footer {
+  position: absolute;
+  z-index: 15;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+#progress {
+  color: #f0c7bd;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+/* Responsive */
+
+@media(max-width:700px) {
+  .story {
+    left: 7%;
+    right: 7%;
+    bottom: 13%;
+  }
+
+  .dialogue {
+    left: 7%;
+    right: 7%;
+    bottom: 12%;
+  }
+
+  .ending {
+    top: 8%;
+    left: 7%;
+    max-width: 86%;
+  }
+
+  .ending h1 {
+    font-size: 45px;
+  }
+
+  .ending h2 {
+    font-size: 19px;
+  }
+
+  .couple {
+    left: 10%;
+    width: 80%;
+  }
+
+  .window {
+    width: 65%;
+    left: 17%;
+  }
+
+  footer {
+    gap: 12px;
+  }
+
+  footer button {
+    padding: 9px 13px;
+    font-size: 11px;
+  }
+}
